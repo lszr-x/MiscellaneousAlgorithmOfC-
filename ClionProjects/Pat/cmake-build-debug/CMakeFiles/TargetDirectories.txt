@@ -1,0 +1,3 @@
+/Users/apple/Downloads/code/MiscellaneousAlgorithmOfC-/ClionProjects/Pat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/apple/Downloads/code/MiscellaneousAlgorithmOfC-/ClionProjects/Pat/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apple/Downloads/code/MiscellaneousAlgorithmOfC-/ClionProjects/Pat/cmake-build-debug/CMakeFiles/Pat.dir
