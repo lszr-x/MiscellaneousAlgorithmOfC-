@@ -9,4 +9,8 @@
 /Users/apple/Downloads/code/MiscellaneousAlgorithmOfC-/ClionProjects/Pat/main.cpp
 iostream
 -
+set
+-
+iomanip
+-
 
