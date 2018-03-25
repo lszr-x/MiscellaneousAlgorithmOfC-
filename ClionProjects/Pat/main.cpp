@@ -5,53 +5,68 @@
 #include <cmath>
 #include <cstdio>
 #include <cstring>
+
 using namespace std;
+struct test{
+    int x;
+    int y1;
+    int y2;
+};
+bool cmp1(const test &x, const test &y) {
+    return x.x < y.x;
+}
+bool cmp2(const test &x, const test &y) {
+    return x.y1 < y.y1;
+}
+bool cmp3(const test &x, const test &y) {
+    return x.y2 > y.y2;
+}
 
 int main() {
-    string a;
-    while(cin>>a){
-        char arr[11];
-        for(int i=0;i<a.length();i++){
-            arr[i]=a[i];
-        }
-        sort(arr,arr+11);
-        int t=0;
-        for(int i=1;i<11;i++){
-            if(arr[i]==arr[i-1]){
-                arr[i-1]=0;
-                t++;
-            }
-        }
-        sort(arr,arr+11);
-        char ar[11-t];
-        int j=0;
-        for(int i=10;i>=t;i--){
-            ar[j++]=arr[i];
-        }
-        cout<<"int[] arr = new int[]{";
-        for(int i=0;i<11-t;i++){
-            if(i!=10-t)
-            cout<<ar[i]<<",";
-            else
-                cout<<ar[i]<<"};"<<endl;
-        }
-        int index[11];
-        for(int i=0;i<11;i++){
-            for(int k=0;k<11-t;k++){
-                if(ar[k]==a[i]){
-                    index[i]=k;
-                    break;
+    char a[10005];
+    while(gets(a)){
+        string s1="",s2="";
+        for(int i=0;i<strlen(a);i++){
+            if(a[i]==' '){
+                for(int j=0;j<i;j++){
+                    s1+=a[j];
                 }
+                for(int j=i+1;j<strlen(a);j++){
+                    s2+=a[j];
+                }
+                break;
             }
         }
-        cout<<"int[] index = new int[]{";
-        for(int i=0;i<11;i++){
-            if(i!=10)
-                cout<<index[i]<<",";
-            else
-                cout<<index[i]<<"};"<<endl;
+        bool f1=true,f2=true;
+        for(int i=0;i<s1.length();i++){
+            if(s1[i]<'0'||s1[i]>'9'){
+                f1=false;
+                break;
+            }
         }
+        for(int i=0;i<s2.length();i++){
+            if(s2[i]<'0'||s2[i]>'9'){
+                f2=false;
+                break;
+            }
+        }
+        if(f1&&f2){
+            cout<<s1<<" + "<<s2<<" = ";
+            int a=stoi(s1);
+            int b=stoi(s2);
+            cout<<a+b<<endl;
 
+        }else if(f1){
+
+            cout<<s1<<" + ? = ?"<<endl;
+
+        }else if(f2){
+            cout<<"? + "<<s1<<" = ?"<<endl;
+
+
+        } else{
+            cout<<"? + ? = ?"<<endl;
+        }
     }
 
     return 0;
