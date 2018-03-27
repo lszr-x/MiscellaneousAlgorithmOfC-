@@ -8,53 +8,48 @@
 
 using namespace std;
 struct test{
-    string add;
-    int num;
-    string next;
+    int x;
+    int y1;
+    int y2;
 };
 bool cmp1(const test &x, const test &y) {
-
-    return x.num<y.num;
+    return x.x < y.x;
 }
-
 bool cmp2(const test &x, const test &y) {
-
-    return x.num>y.num;
+    return x.y1 < y.y1;
 }
-
+bool cmp3(const test &x, const test &y) {
+    return x.y2 > y.y2;
+}
 int main() {
-    int n;
-    int top;
-    while(cin>>top>>n){
-        test tt[n];
-        test tt2[n];
-        for(int i=0;i<n;i++){
-            cin>>tt[i].add>>tt[i].num>>tt[i].next;
-            tt2[i].add=tt[i].add;
-            tt2[i].num=tt[i].num;
-            tt2[i].next=tt[i].next;
+    int k;
+    cin>>k;
+    string a;
+    int t=0;
+    while(cin>>a){
+        if(t==k&&a!="End"){
+            t=0;
+            cout<<a<<endl;
+        }else if(a=="ChuiZi"){
+            cout<<"Bu"<<endl;
+            t++;
+
+        }else if(a=="JianDao"){
+            cout<<"ChuiZi"<<endl;
+            t++;
+
+
+        }else if(a=="Bu"){
+            cout<<"JianDao"<<endl;
+            t++;
+
+        }else {
+            break;
         }
-        sort(tt,tt+n,cmp1);
-        sort(tt2,tt2+n,cmp2);
-        for(int i=0;i<n/2;i++){
 
-            tt2[i].next=tt[i].add;
-            tt[i].next=tt2[i+1].add;
-
-
-
-            if(i==n/2||i==(n/2-1)){
-                cout<<tt2[i].add<<" "<<tt2[i].num<<" "<<tt2[i].next<<endl;
-                cout<<tt[i].add<<" "<<tt[i].num<<" "<<-1<<endl;
-            }else{
-                cout<<tt2[i].add<<" "<<tt2[i].num<<" "<<tt2[i].next<<endl;
-                cout<<tt[i].add<<" "<<tt[i].num<<" "<<tt[i].next<<endl;
-            }
-        }
-//        for(int i=0s;i<n;i++){
-
-//        }
     }
+
+
     return 0;
 
 }

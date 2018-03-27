@@ -24,30 +24,30 @@ bool cmp3(const test &x, const test &y) {
 int main() {
     int k;
     cin>>k;
-        string a;
-        int t=0;
-        while(cin>>a){
-            if(t==k){
-                t=0;
-                cout<<a<<endl;
-            }else if(a=="ChuiZi"){
-                cout<<"Bu"<<endl;
-                t++;
+    string a;
+    int t=0;
+    while(cin>>a){
+        if(t==k&&a!="End"){
+            t=0;
+            cout<<a<<endl;
+        }else if(a=="ChuiZi"){
+            cout<<"Bu"<<endl;
+            t++;
 
-            }else if(a=="JianDao"){
-                cout<<"ChuiZi"<<endl;
-                t++;
+        }else if(a=="JianDao"){
+            cout<<"ChuiZi"<<endl;
+            t++;
 
 
-            }else if(a=="Bu"){
-                cout<<"JianDao"<<endl;
-                t++;
+        }else if(a=="Bu"){
+            cout<<"JianDao"<<endl;
+            t++;
 
-            }else {
-                break;
-            }
-
+        }else {
+            break;
         }
+
+    }
 
 
     return 0;
